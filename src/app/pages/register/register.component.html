@@ -1,58 +1,85 @@
-<div class="container p-4">
-  <div class="card mt-4 mx-auto" style="width: 400px">
-    <div class="card-header text-center fs-5 bg-dark text-white">
-      CUSTOMER REGISTRATION FORM
-    </div>
+<div class="container mt-2">
+  <div class="card mt-4 mx-auto" style="width: 520px">
     <div class="card-body bg-white">
-      <form>
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="fnameId">First Name</label>
-            <input type="text" class="form-control bg-light" id="fnameId" />
-          </div>
-          <div class="col-md-6">
-            <label for="lnameId">Last Name</label>
-            <input type="text" class="form-control bg-light" id="lnameId" />
-          </div>
-        </div>
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="userId">Username</label>
-            <input type="text" class="form-control bg-light" id="userId" />
-          </div>
-          <div class="col-md-6">
-            <label for="emailId">Email</label>
-            <input type="email" class="form-control bg-light" id="emailId" />
+      <form class="p-2" [formGroup]="registrationForm" (ngSubmit)="register()">
+        <div>
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <label for="userId">Username</label>
+              <input
+                type="text"
+                class="form-control bg-light"
+                id="userId"
+                formControlName="username"
+              />
+            </div>
           </div>
         </div>
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="passId">Password</label>
-            <input type="password" class="form-control bg-light" id="passId" />
-          </div>
-          <div class="col-md-6">
-            <label for="passId">Confirm Password</label>
-            <input type="password" class="form-control bg-light" id="passId" />
-          </div>
-        </div>
-        <div class="row mb-3">
+        <div class="row mb-2">
           <div class="col-md-12">
-            <label for="mobileId">Mobile Number</label>
-            <input type="number" class="form-control bg-light" id="mobileId" />
+            <label for="nameId">Full Name</label>
+            <input
+              type="text"
+              class="form-control bg-light"
+              id="nameId"
+              formControlName="fullName"
+            />
           </div>
         </div>
-        <hr />
-        <div class="row mt-3">
+        <div class="row mb-2">
+          <div class="col-md-12">
+            <label for="emailId">Email</label>
+            <input
+              type="email"
+              class="form-control bg-light"
+              id="emailId"
+              formControlName="email"
+            />
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-md-12">
+            <label for="passId">Password</label>
+            <input
+              type="password"
+              class="form-control bg-light"
+              id="passId"
+              formControlName="password"
+            />
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-md-6">
+            <label for="mobileId">Mobile Number</label>
+            <input
+              type="number"
+              class="form-control bg-light"
+              id="mobileId"
+              formControlName="mobileNumber"
+            />
+          </div>
           <div class="col-md-6">
             <label for="govtId">Government ID</label>
-            <input type="number" class="form-control bg-light" id="govtId" />
-          </div>
-          <div class="col-md-6">
-            <label for="kraId">Kra Pin</label>
-            <input type="text" class="form-control bg-light" id="kraId" />
+            <input
+              type="number"
+              class="form-control bg-light"
+              id="govtId"
+              formControlName="governmentId"
+            />
           </div>
         </div>
-        <div class="row w-25 mx-auto mt-3">
+        <div class="row mb-2">
+          <div class="col-md-12">
+            <label for="kraId">Kra Pin</label>
+            <input
+              type="text"
+              class="form-control bg-light"
+              id="kraId"
+              formControlName="kraPin"
+            />
+          </div>
+        </div>
+        <div class="row w-25 mx-auto">
           <button class="btn btn-sm btn-dark" type="submit">REGISTER</button>
         </div>
       </form>
