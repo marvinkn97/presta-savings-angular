@@ -39,4 +39,8 @@ export class EmailconfirmComponent {
         this.router.navigateByUrl('login');
       });
   }
+
+  resendToken() {
+    this.router.navigateByUrl('resend');
+  }
 }

@@ -30,4 +30,11 @@ export class CustomerService {
       {}
     );
   }
+
+  resendEmail(email: string) {
+    this.http.post<APIResponse>(
+      `${this.BASE_URL}/registration/resend?email=${email}`,
+      {}
+    );
+  }
 }
