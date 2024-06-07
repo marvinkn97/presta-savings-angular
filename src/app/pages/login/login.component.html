@@ -1,20 +1,30 @@
 <div class="container p-4">
   <div class="card mt-4 mx-auto" style="width: 350px">
     <div class="card-body bg-white">
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="row mb-3">
           <div class="col-md-12">
             <label for="userId">Username</label>
-            <input type="text" class="form-control bg-light" id="userId" />
+            <input
+              type="text"
+              class="form-control bg-light"
+              id="userId"
+              formControlName="username"
+            />
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-md-12">
             <label for="passId">Password</label>
-            <input type="password" class="form-control bg-light" id="passId" />
+            <input
+              type="password"
+              class="form-control bg-light"
+              id="passId"
+              formControlName="password"
+            />
           </div>
         </div>
-        <div class="row w-25 mx-auto mt-3">
+        <div class="row w-50 mx-auto mt-3">
           <button class="btn btn-sm btn-dark" type="submit">LOGIN</button>
         </div>
       </form>

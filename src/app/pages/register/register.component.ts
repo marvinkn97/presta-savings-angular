@@ -29,7 +29,7 @@ export class RegisterComponent {
     kraPin: new FormControl('', Validators.required),
   });
 
-  customerService: CustomerService = inject(CustomerService);
+  private customerService: CustomerService = inject(CustomerService);
   router: Router = inject(Router);
 
   register() {
