@@ -1,0 +1,53 @@
+<div class="container p-4">
+  <h3 class="display-5 fs-4">USERS DATA</h3>
+
+  <div class="table-responsive">
+    <table class="table table-responsive table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">USERNAME</th>
+          <th scope="col">ROLE</th>
+          <th scope="col">JOIN DATE</th>
+          <th scope="col">ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of users; track user.id) {
+        <tr>
+          <td>{{ user?.id }}</td>
+          <td>{{ user?.username }}</td>
+          <td>{{ user?.role }}</td>
+          <td>{{ user?.createdAt | date : "dd-MM-yyyy: hh:mm:ss" }}</td>
+          <td>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                type="submit"
+                class="btn btn-sm btn-secondary"
+                [routerLink]="['/home/users', user?.id]"
+              >
+                View
+              </a>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

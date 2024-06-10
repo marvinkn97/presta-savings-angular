@@ -7,13 +7,12 @@ import {
 } from '@angular/forms';
 import { LoginRequest } from '../../dtos/login.request';
 import { AuthService } from '../../services/auth.service';
-import { APIResponse } from '../../dtos/api.response';
-import Swal from 'sweetalert2';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -30,6 +29,7 @@ export class LoginComponent {
   });
 
   private authService: AuthService = inject(AuthService);
+  router: Router = inject(Router);
 
   login() {
     let loginRequest: LoginRequest = {
@@ -37,26 +37,6 @@ export class LoginComponent {
       password: this.loginForm.value.password as string,
     };
 
-    this.authService.authenticate(loginRequest).subscribe(
-      (response: APIResponse) => {
-        console.log(response);
-        if (response.status === 200) {
-          Swal.fire({
-            title: response.reason,
-            text: 'Authenticated',
-            icon: 'success',
-          });
-        }
-        this.loginForm.reset();
-      },
-      (err) => {
-        console.log(err.error);
-        Swal.fire({
-          title: err.error.reason,
-          text: err.error.data as string,
-          icon: 'error',
-        });
-      }
-    );
+    this.authService.authenticate(loginRequest);
   }
 }

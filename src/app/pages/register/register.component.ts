@@ -9,12 +9,12 @@ import { RegistrationRequest } from '../../dtos/registration.request';
 import { CustomerService } from '../../services/customer.service';
 import { APIResponse } from '../../dtos/api.response';
 import Swal from 'sweetalert2';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })

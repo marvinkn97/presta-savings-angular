@@ -1,0 +1,30 @@
+import { Component, OnInit, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { DatePipe } from '@angular/common';
+
+@Component({
+  selector: 'app-user',
+  standalone: true,
+  imports: [DatePipe],
+  templateUrl: './user.component.html',
+  styleUrl: './user.component.css',
+})
+export class UserComponent implements OnInit {
+  activeRoute: ActivatedRoute = inject(ActivatedRoute);
+  private userService: UserService = inject(UserService);
+  userId!: number;
+  user!: any;
+
+  ngOnInit(): void {
+    this.activeRoute.params.subscribe((p) => {
+      console.log(p['id']);
+      this.userId = p['id'];
+    });
+
+    this.userService.getUserById(this.userId).subscribe((response) => {
+      console.log(response);
+      this.user = response.data;
+    });
+  }
+}
