@@ -28,16 +28,25 @@ export class EmailconfirmComponent {
   activateAccount() {
     this.customerService
       .confirmEmail(this.activationForm.value.code as string)
-      .subscribe((response: APIResponse) => {
-        console.log(response);
-        Swal.fire({
-          title: 'Customer Registration',
-          text: response.data as string,
-          icon: 'success',
-        });
-        this.activationForm.reset();
-        this.router.navigateByUrl('login');
-      });
+      .subscribe(
+        (response: APIResponse) => {
+          console.log(response);
+          Swal.fire({
+            title: response.reason,
+            text: response.data as string,
+            icon: 'success',
+          });
+          this.activationForm.reset();
+          this.router.navigateByUrl('login');
+        },
+        (err) => {
+          Swal.fire({
+            title: 'err.error.reason',
+            text: err.error.data,
+            icon: 'error',
+          });
+        }
+      );
   }
 
   resendToken() {

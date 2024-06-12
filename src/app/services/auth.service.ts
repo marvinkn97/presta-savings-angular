@@ -5,6 +5,15 @@ import { APIResponse } from '../dtos/api.response';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { jwtDecode } from 'jwt-decode';
+
+interface JwtPayload {
+  iss: string;
+  iat: number;
+  exp: number;
+  sub: string;
+  role: string;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -28,8 +37,14 @@ export class AuthService {
             text: 'Authenticated',
             icon: 'success',
           });
+
+          let decodedToken = this.decodeToken(response.data as string);
+          console.log(decodedToken);
+
+          sessionStorage.setItem('role', decodedToken.role);
+          sessionStorage.setItem('username', decodedToken.sub);
+          this.router.navigateByUrl('home');
         }
-        this.router.navigateByUrl('home');
       },
       (err) => {
         console.error(err);
@@ -40,5 +55,22 @@ export class AuthService {
         });
       }
     );
+  }
+
+  logout(): void {
+    if (confirm('Are you sure you want to logout?')) {
+      localStorage.clear();
+      this.router.navigateByUrl('login');
+    }
+    return;
+  }
+
+  decodeToken(token: string): JwtPayload {
+    try {
+      return jwtDecode<JwtPayload>(token);
+    } catch (error) {
+      console.error('Invalid token', error);
+      throw error;
+    }
   }
 }

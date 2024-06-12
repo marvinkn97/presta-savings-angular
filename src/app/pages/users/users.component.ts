@@ -16,9 +16,14 @@ export class UsersComponent implements OnInit {
   private userService: UserService = inject(UserService);
 
   ngOnInit(): void {
-    this.userService.getAllUsers().subscribe((response: APIResponse) => {
-      console.log(response.data);
-      this.users = response.data;
-    });
+    this.userService.getAllUsers().subscribe(
+      (response: APIResponse) => {
+        console.log(response.data);
+        this.users = response.data;
+      },
+      (err) => {
+        console.log(err.error);
+      }
+    );
   }
 }
