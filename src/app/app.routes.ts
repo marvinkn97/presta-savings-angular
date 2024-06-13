@@ -8,6 +8,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { UserComponent } from './pages/user/user.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CustomerDetailsComponent } from './pages/customer-details/customer-details.component';
 
 export const routes: Routes = [
   {
@@ -50,6 +51,10 @@ export const routes: Routes = [
       {
         path: 'customers',
         component: CustomersComponent,
+      },
+      {
+        path: 'customers/:id',
+        component: CustomerDetailsComponent,
       },
     ],
   },

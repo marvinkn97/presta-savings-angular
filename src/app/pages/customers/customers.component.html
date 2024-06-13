@@ -6,14 +6,34 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">MEMBER NUMBER</th>
           <th scope="col">NAME</th>
           <th scope="col">EMAIL</th>
           <th scope="col">MOBILE</th>
-          <th scope="col">DELETED</th>
+          <th scope="col">ACTIONS</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        @for (customer of customers; track customer.memberNumber; let i =
+        $index) {
+        <tr>
+          <td>{{ customer?.memberNumber }}</td>
+          <td>{{ customer?.name }}</td>
+          <td>{{ customer?.email }}</td>
+          <td>{{ customer?.mobileNumber }}</td>
+          <td>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                type="submit"
+                class="btn btn-sm btn-secondary"
+                [routerLink]="['/home/customers', customer.memberNumber]"
+              >
+                View
+              </a>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
     </table>
     <nav aria-label="...">
       <ul class="pagination">

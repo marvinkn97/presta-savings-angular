@@ -1,0 +1,53 @@
+<div class="container p-4">
+  <div class="d-flex gap-3 align-items-center mb-4">
+    <a class="btn btn-sm btn-secondary" routerLink="/home/customers"><< BACK</a>
+  </div>
+
+  <h3 class="display-5 fs-4">CUSTOMER DETAILS</h3>
+  <div class="table-responsive">
+    <table class="table table-responsive table-hover table-bordered">
+      <tbody>
+        <tr>
+          <th>USERNAME</th>
+          <td>{{ customer?.username }}</td>
+        </tr>
+        <tr>
+          <th>MEMBER NUMBER</th>
+          <td>{{ customer?.memberNumber }}</td>
+        </tr>
+        <tr>
+          <th>NAME</th>
+          <td>{{ customer?.name }}</td>
+        </tr>
+        <tr>
+          <th>EMAIL</th>
+          <td>{{ customer?.email }}</td>
+        </tr>
+        <tr>
+          <th>EMAIL CONFIRMED</th>
+          <td>{{ customer?.emailConfirmed }}</td>
+        </tr>
+        <tr>
+          <th>MOBILE NUMBER</th>
+          <td>{{ customer?.mobileNumber }}</td>
+        </tr>
+        <tr>
+          <th>MOBILE CONFIRMED</th>
+          <td>{{ customer?.mobileConfirmed }}</td>
+        </tr>
+        <tr>
+          <th>JOIN DATE</th>
+          <td>{{ customer?.createdAt | date : "dd-MM-yyyy: hh:mm:ss" }}</td>
+        </tr>
+        <tr>
+          <th>GOVERMENT ID</th>
+          <td>{{ customer?.governmentId }}</td>
+        </tr>
+        <tr>
+          <th>KRA PIN</th>
+          <td>{{ customer?.kraPin }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,12 +1,12 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [DatePipe],
+  imports: [DatePipe, RouterLink],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
 })

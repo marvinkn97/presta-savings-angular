@@ -31,6 +31,7 @@ export class AuthService {
       (response) => {
         console.log(response.data);
         if (response.status === 200) {
+          localStorage.removeItem('token');
           localStorage.setItem('token', JSON.stringify(response.data));
           Swal.fire({
             title: response.reason,
