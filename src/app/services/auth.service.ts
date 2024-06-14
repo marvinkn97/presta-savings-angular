@@ -61,6 +61,7 @@ export class AuthService {
   logout(): void {
     if (confirm('Are you sure you want to logout?')) {
       localStorage.clear();
+      sessionStorage.clear();
       this.router.navigateByUrl('login');
     }
     return;
@@ -74,4 +75,10 @@ export class AuthService {
       throw error;
     }
   }
+
+  isLoggedIn(): boolean {
+    return localStorage.getItem('token') != null ? true : false;
+  }
+
+  isAuthorized() {}
 }

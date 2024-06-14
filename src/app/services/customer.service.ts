@@ -10,7 +10,7 @@ import { RegistrationRequest } from '../dtos/registration.request';
 export class CustomerService {
   http: HttpClient = inject(HttpClient);
   private readonly BASE_URL = 'http://localhost:8081/savings/api/v1/customers';
-  token = JSON.parse(localStorage.getItem('token') ?? '');
+  token = localStorage.getItem('token');
 
   constructor() {}
 
@@ -42,9 +42,15 @@ export class CustomerService {
   getAllCustomers(): Observable<APIResponse> {
     console.log(this.token);
 
+    let parsedToken = '';
+
+    if (this.token) {
+      parsedToken = JSON.parse(this.token);
+    }
+
     let headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
-      .set('Authorization', `Bearer ${this.token}`);
+      .set('Authorization', `Bearer ${parsedToken}`);
 
     console.log(headers);
 
@@ -52,9 +58,15 @@ export class CustomerService {
   }
 
   getCustomerByMemberNumber(memberNumber: string): Observable<APIResponse> {
+    let parsedToken = '';
+
+    if (this.token) {
+      parsedToken = JSON.parse(this.token);
+    }
+
     let headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
-      .set('Authorization', `Bearer ${this.token}`);
+      .set('Authorization', `Bearer ${parsedToken}`);
 
     console.log(headers);
 
