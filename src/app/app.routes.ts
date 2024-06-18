@@ -11,6 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CustomerDetailsComponent } from './pages/customer-details/customer-details.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { MyAccountsComponent } from './pages/my-accounts/my-accounts.component';
+import { authGuard } from './services/auth.guard';
 
 export const routes: Routes = [
   {
@@ -32,6 +33,7 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [authGuard],
     loadChildren: () => [
       {
         path: '',

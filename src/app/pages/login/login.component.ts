@@ -4,15 +4,18 @@ import {
   FormControl,
   Validators,
   ReactiveFormsModule,
+  AbstractControl,
 } from '@angular/forms';
 import { LoginRequest } from '../../dtos/login.request';
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, NgIf],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })

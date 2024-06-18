@@ -2,5 +2,39 @@
   <h3 class="display-5 fs-4">Welcome, {{ username }}</h3>
   <div *ngIf="role === 'ADMIN'">Admin Dashboard</div>
   <div *ngIf="role === 'CSR'">CSR Dashboard</div>
-  <div *ngIf="role === 'CUSTOMER'">Customer Dashboard</div>
+  <div *ngIf="role === 'CUSTOMER'">
+    <div class="container-md p-4">
+      <div class="card mb-3">
+        <div class="card-header">
+          <h5 class="display-5 fs-5">Your Account Overview</h5>
+        </div>
+        <div class="card-body P-2">
+          <div>
+            <div class="card-header">SUMMARY</div>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod,
+              recusandae?
+            </p>
+          </div>
+          <div>
+            <div class="card-header">RECENT TRANSACTIONS</div>
+            <div class="table-responsive">
+              <table class="table table-responsive table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">DATE</th>
+                    <th scope="col">TRANSACTION CODE</th>
+                    <th scope="col">TRANSACTION TYPE</th>
+                    <th scope="col">AMOUNT</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
