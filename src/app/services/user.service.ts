@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class UserService {
   http: HttpClient = inject(HttpClient);
   private readonly BASE_URL = 'http://localhost:8081/savings/api/v1/users';
-  token = JSON.parse(localStorage.getItem('token') ?? '');
+  token = JSON.parse(sessionStorage.getItem('token') ?? '');
 
   constructor() {}
 

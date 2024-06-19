@@ -41,7 +41,7 @@ export class EmailconfirmComponent {
         },
         (err) => {
           Swal.fire({
-            title: 'err.error.reason',
+            title: err.error.reason,
             text: err.error.data,
             icon: 'error',
           });

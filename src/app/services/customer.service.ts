@@ -10,7 +10,7 @@ import { RegistrationRequest } from '../dtos/registration.request';
 export class CustomerService {
   http: HttpClient = inject(HttpClient);
   private readonly BASE_URL = 'http://localhost:8081/savings/api/v1/customers';
-  token = localStorage.getItem('token');
+  token = sessionStorage.getItem('token');
 
   constructor() {}
 

@@ -8,13 +8,14 @@
     <table class="table table-responsive table-hover table-bordered">
       <tbody>
         <tr>
+          <th>#</th>
+          <td>{{ customer?.memberNumber }}</td>
+        </tr>
+        <tr>
           <th>USERNAME</th>
           <td>{{ customer?.username }}</td>
         </tr>
-        <tr>
-          <th>MEMBER NUMBER</th>
-          <td>{{ customer?.memberNumber }}</td>
-        </tr>
+
         <tr>
           <th>NAME</th>
           <td>{{ customer?.name }}</td>
@@ -47,6 +48,33 @@
           <th>KRA PIN</th>
           <td>{{ customer?.kraPin }}</td>
         </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="display-5 fs-4 mt-3">ACCOUNT DETAILS</h3>
+  <div class="table-responsive">
+    <table class="table table-responsive table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>NAME</th>
+          <th>TYPE</th>
+          <th>BALANCE</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (account of customer?.accounts; track $index) {
+        <tr>
+          <td>{{ account.accountNumber }}</td>
+          <td>{{ account.accountName }}</td>
+          <td>{{ account.accountType }}</td>
+          <td>{{ account.balance }}</td>
+          <td><a href="" class="btn btn-sm btn-secondary">view</a></td>
+        </tr>
+
+        }
       </tbody>
     </table>
   </div>
