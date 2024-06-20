@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { Role } from '../../enum/Role.enum';
+import { Role } from '../../domain/enum/Role.enum';
 import { NgIf } from '@angular/common';
 
 @Component({

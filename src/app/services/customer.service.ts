@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { APIResponse } from '../dtos/api.response';
-import { RegistrationRequest } from '../dtos/registration.request';
+import { APIResponse } from '../domain/dtos/api.response';
+import { RegistrationRequest } from '../domain/dtos/registration.request';
 
 @Injectable({
   providedIn: 'root',

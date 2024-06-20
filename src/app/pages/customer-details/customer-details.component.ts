@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CustomerService } from '../../services/customer.service';
-import { APIResponse } from '../../dtos/api.response';
+import { APIResponse } from '../../domain/dtos/api.response';
 import { DatePipe } from '@angular/common';
 
 @Component({

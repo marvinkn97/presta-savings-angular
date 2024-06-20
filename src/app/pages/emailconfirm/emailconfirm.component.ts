@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomerService } from '../../services/customer.service';
-import { APIResponse } from '../../dtos/api.response';
+import { APIResponse } from '../../domain/dtos/api.response';
 import Swal from 'sweetalert2';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { APIResponse } from '../../dtos/api.response';
+import { APIResponse } from '../../domain/dtos/api.response';
 import { DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
