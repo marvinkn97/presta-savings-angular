@@ -27,6 +27,7 @@ export class DashboardComponent implements OnInit {
       this.customerService
         .getCustomerByMemberNumber(this.memberNumber)
         .subscribe((response) => {
+          sessionStorage.setItem('customer', JSON.stringify(response.data));
           const data = response.data as { accounts: any[] };
 
           console.log(data.accounts);
@@ -36,14 +37,14 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  getTotalBalanceForAllAccounts() {
+  getTotalBalanceForAllAccounts(): number {
     if (this.accounts.length > 0) {
       // Use reduce to accumulate the total balance
       let sum = this.accounts
         .map((a: Account) => a.balance) // Extract balances into an array
         .reduce((total: number, balance: number) => total + balance, 0); // Sum up all balances starting from 0
-
       this.totalBalance = sum;
     }
+    return this.totalBalance;
   }
 }
