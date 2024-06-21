@@ -5,9 +5,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RegistrationRequest } from '../../domain/dtos/registration.request';
+import { RegistrationRequest } from '../../dtos/registration.request';
 import { CustomerService } from '../../services/customer.service';
-import { APIResponse } from '../../domain/dtos/api.response';
+import { APIResponse } from '../../dtos/api.response';
 import Swal from 'sweetalert2';
 import { Router, RouterLink } from '@angular/router';
 

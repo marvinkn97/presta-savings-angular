@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Role } from '../../domain/enum/Role.enum';
+import { Role } from '../../enum/role.enum';
 import { NgIf } from '@angular/common';
 import { CustomerService } from '../../services/customer.service';
-import { Account } from '../../domain/account.model';
+import { Account } from '../../model/account.model';
 
 @Component({
   selector: 'app-dashboard',

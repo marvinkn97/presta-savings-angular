@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
-import { AccountRequest } from '../domain/dtos/account.request';
+import { AccountRequest } from '../dtos/account.request';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { APIResponse } from '../domain/dtos/api.response';
+import { APIResponse } from '../dtos/api.response';
 
 @Injectable({
   providedIn: 'root',

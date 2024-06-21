@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { Role } from '../../domain/enum/Role.enum';
 import { NgIf } from '@angular/common';
+import { Role } from '../../enum/role.enum';
 
 @Component({
   selector: 'app-home',

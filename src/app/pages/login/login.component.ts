@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
   AbstractControl,
 } from '@angular/forms';
-import { LoginRequest } from '../../domain/dtos/login.request';
+import { LoginRequest } from '../../dtos/login.request';
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';

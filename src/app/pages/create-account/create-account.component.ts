@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccountService } from '../../services/account.service';
-import { AccountRequest } from '../../domain/dtos/account.request';
+import { AccountRequest } from '../../dtos/account.request';
 import Swal from 'sweetalert2';
 
 @Component({

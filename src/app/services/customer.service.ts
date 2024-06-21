@@ -1,16 +1,16 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { APIResponse } from '../domain/dtos/api.response';
-import { RegistrationRequest } from '../domain/dtos/registration.request';
+import { APIResponse } from '../dtos/api.response';
+import { RegistrationRequest } from '../dtos/registration.request';
+import { Endpoint } from '../enum/endpoint.enum';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CustomerService {
   http: HttpClient = inject(HttpClient);
-  private readonly BASE_URL = 'http://localhost:8081/savings/api/v1/customers';
-  token = sessionStorage.getItem('token');
+  private readonly BASE_URL = Endpoint.CUSTOMER_ENDPOINT;
 
   constructor() {}
 
@@ -40,17 +40,12 @@ export class CustomerService {
   }
 
   getAllCustomers(): Observable<APIResponse> {
-    console.log(this.token);
-
-    let parsedToken = '';
-
-    if (this.token) {
-      parsedToken = JSON.parse(this.token);
-    }
-
     let headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
-      .set('Authorization', `Bearer ${parsedToken}`);
+      .set(
+        'Authorization',
+        `Bearer ${JSON.parse(sessionStorage.getItem('token')!)}`
+      );
 
     console.log(headers);
 
@@ -58,15 +53,12 @@ export class CustomerService {
   }
 
   getCustomerByMemberNumber(memberNumber: string): Observable<APIResponse> {
-    let parsedToken = '';
-
-    if (this.token) {
-      parsedToken = JSON.parse(this.token);
-    }
-
     let headers = new HttpHeaders()
       .set('Content-Type', 'application/json')
-      .set('Authorization', `Bearer ${parsedToken}`);
+      .set(
+        'Authorization',
+        `Bearer ${JSON.parse(sessionStorage.getItem('token')!)}`
+      );
 
     console.log(headers);
 

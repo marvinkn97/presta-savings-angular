@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { LoginRequest } from '../domain/dtos/login.request';
-import { APIResponse } from '../domain/dtos/api.response';
+import { LoginRequest } from '../dtos/login.request';
+import { APIResponse } from '../dtos/api.response';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { jwtDecode } from 'jwt-decode';
-import { JwtToken } from '../domain/jwt.token';
+import { JwtToken } from '../model/jwt.token';
 
 interface JwtPayload {
   iss: string;
