@@ -1,37 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [role]="role"></app-navbar>
 <div class="container p-4">
-  <ul class="nav nav-tabs">
-    <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link text-black" routerLink="/home/dashboard">Dashboard</a>
-    </li>
-    <li class="nav-item" routerLinkActive="active" *ngIf="role === 'ADMIN'">
-      <a class="nav-link text-black" routerLink="/home/users">Users</a>
-    </li>
-    <li class="nav-item" routerLinkActive="active" *ngIf="role === 'CSR'">
-      <a class="nav-link text-black" routerLink="/home/customers">Customers</a>
-    </li>
-    <li class="nav-item" *ngIf="role === 'CSR'">
-      <a class="nav-link disabled" aria-disabled="true">Accounts</a>
-    </li>
-    <li class="nav-item" *ngIf="role === 'CSR'">
-      <a class="nav-link disabled" aria-disabled="true">Transactions</a>
-    </li>
-    <li class="nav-item" routerLinkActive="active" *ngIf="role === 'CUSTOMER'">
-      <a class="nav-link text-black" routerLink="/home/create-account"
-        >Create Account</a
-      >
-    </li>
-    <li class="nav-item" routerLinkActive="active" *ngIf="role === 'CUSTOMER'">
-      <a class="nav-link text-black" routerLink="/home/owner-accounts"
-        >My Accounts</a
-      >
-    </li>
-    <li class="nav-item" *ngIf="role === 'CUSTOMER'">
-      <a class="nav-link disabled" aria-disabled="true">Payments</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" aria-disabled="true">Profile</a>
-    </li>
-  </ul>
   <router-outlet></router-outlet>
 </div>

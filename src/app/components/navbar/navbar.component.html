@@ -1,12 +1,85 @@
-<nav class="navbar bg-white position-sticky top-0 z-3">
+<nav
+  class="navbar navbar-expand-lg navbar-light position-sticky bg-white top-0 z-3 p-2"
+>
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="">PRESTA SAVINGS</a>
-    <div class="me-2">
-      <div class="d-flex align-items-center gap-2">
-        <button class="btn btn-sm btn-secondary" (click)="logout()">
-          LOGOUT
-        </button>
-      </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+      <ul class="navbar-nav me-5 mb-2 mb-lg-0">
+        <li ngbDropdown class="nav-item dropdown">
+          <a
+            ngbDropdownToggle
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Username
+          </a>
+          <ul
+            ngbDropdownMenu
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdown"
+          >
+            <li><a class="dropdown-item" routerLink="/home">Dashboard</a></li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/home/users"
+                *ngIf="role === 'ADMIN'"
+                >Manage Users</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/home/customers"
+                *ngIf="role === 'CSR'"
+                >Manage Customers</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/home/accounts"
+                *ngIf="role === 'CSR'"
+                >Manage Accounts</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/home/transactions"
+                *ngIf="role === 'CSR'"
+                >Manage Transactions</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                routerLink="/home/owner-accounts"
+                *ngIf="role === 'CUSTOMER'"
+                >My Accounts</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
