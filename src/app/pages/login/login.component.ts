@@ -40,6 +40,11 @@ export class LoginComponent {
       password: this.loginForm.value.password as string,
     };
 
+    if (!this.loginForm.valid) {
+      alert('Form not valid');
+      return;
+    }
+
     this.authService.authenticate(loginRequest);
   }
 }

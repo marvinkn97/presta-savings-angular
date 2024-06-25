@@ -34,14 +34,19 @@ export class RegisterComponent {
 
   register() {
     let registrationRequest: RegistrationRequest = {
-      username: this.registrationForm.value.username ?? '',
-      fullName: this.registrationForm.value.fullName ?? '',
-      email: this.registrationForm.value.email ?? '',
-      password: this.registrationForm.value.password ?? '',
-      mobileNumber: this.registrationForm.value.mobileNumber ?? '',
-      governmentId: this.registrationForm.value.governmentId ?? '',
-      kraPin: this.registrationForm.value.kraPin ?? '',
+      username: this.registrationForm.value.username as string,
+      fullName: this.registrationForm.value.fullName as string,
+      email: this.registrationForm.value.email as string,
+      password: this.registrationForm.value.password as string,
+      mobileNumber: this.registrationForm.value.mobileNumber as string,
+      governmentId: this.registrationForm.value.governmentId as string,
+      kraPin: this.registrationForm.value.kraPin as string,
     };
+
+    if(!this.registrationForm.valid){
+      alert("Form not valid");
+      return;
+    }
 
     this.customerService.registerCustomer(registrationRequest).subscribe(
       (response: APIResponse) => {
