@@ -15,6 +15,8 @@ import { Role } from '../../enum/role.enum';
 export class NavbarComponent {
   private authService: AuthService = inject(AuthService);
 
+  isNavbarCollapsed = true;
+
   @Input()
   role: string = ''
   
@@ -22,4 +24,5 @@ export class NavbarComponent {
     this.authService.logout();
   }
 
+  
 }
