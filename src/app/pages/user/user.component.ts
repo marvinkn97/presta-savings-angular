@@ -15,6 +15,7 @@ export class UserComponent implements OnInit {
   private userService: UserService = inject(UserService);
   userId!: number;
   user!: any;
+  loading = false;
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe((p) => {
@@ -22,9 +23,12 @@ export class UserComponent implements OnInit {
       this.userId = p['id'];
     });
 
+    this.loading = true;
+
     this.userService.getUserById(this.userId).subscribe((response) => {
       console.log(response);
       this.user = response.data;
+      this.loading = false;
     });
   }
 }

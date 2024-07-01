@@ -1,18 +1,81 @@
 <div class="container p-4">
   <h3 class="display-5 fs-4">MY ACCOUNTS</h3>
 
+  <button class="btn btn-md btn-secondary mt-2 mb-3" (click)="open(content)">
+    New Account
+  </button>
+
   <div class="table-responsive">
     <table class="table table-responsive table-hover">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">ACCOUNT#</th>
           <th scope="col">NAME</th>
           <th scope="col">TYPE</th>
           <th scope="col">BALANCE</th>
           <th scope="col">ACTIONS</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        @for (account of accounts; track $index) {
+        <tr>
+          <td>{{ account.accountNumber }}</td>
+          <td>{{ account.accountName }}</td>
+          <td>{{ account.accountType }}</td>
+          <td>{{ account.balance }}</td>
+          <td>
+            <div class="d-flex align-items-center gap-2">
+              <a type="submit" class="btn btn-sm btn-danger"> Delete </a>
+            </div>
+          </td>
+        </tr>
+
+        }
+      </tbody>
     </table>
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Create Account</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="accountForm" (ngSubmit)="createAccount()">
+      <div class="row mb-2">
+        <div class="col-md-12">
+          <label for="userId">Account Name</label>
+          <input
+            type="text"
+            class="form-control bg-light"
+            id="userId"
+            formControlName="accountName"
+          />
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-md-12">
+          <label for="accountType">Account Type</label>
+          <select
+            class="form-control bg-light"
+            id="accountType"
+            formControlName="accountType"
+          >
+            <option value="EDUCATION">EDUCATION</option>
+            <option value="PERSONAL">PERSONAL</option>
+            <option value="VACATION">VACATION</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-outline-secondary">Submit</button>
+    </form>
+  </div>
+</ng-template>

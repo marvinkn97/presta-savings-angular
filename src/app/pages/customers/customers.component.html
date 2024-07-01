@@ -16,7 +16,7 @@
         @for (customer of customers; track customer.memberNumber; let i =
         $index) {
         <tr>
-          <td>{{ customer?.memberNumber }}</td>
+          <td>{{ i + 1 }}</td>
           <td>{{ customer?.name }}</td>
           <td>{{ customer?.email }}</td>
           <td>{{ customer?.mobileNumber }}</td>

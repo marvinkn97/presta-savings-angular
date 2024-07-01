@@ -17,12 +17,12 @@ export class NavbarComponent {
 
   isNavbarCollapsed = true;
 
+  username = sessionStorage.getItem('username');
+
   @Input()
-  role: string = ''
-  
+  role: string = '';
+
   logout() {
     this.authService.logout();
   }
-
-  
 }

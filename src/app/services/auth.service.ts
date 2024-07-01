@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { jwtDecode } from 'jwt-decode';
 import { JwtToken } from '../model/jwt.token';
+import { Endpoint } from '../enum/endpoint.enum';
 
 interface JwtPayload {
   iss: string;
@@ -21,7 +22,7 @@ interface JwtPayload {
 })
 export class AuthService {
   private http: HttpClient = inject(HttpClient);
-  private readonly BASE_URL = 'http://localhost:8081/savings/api/v1/auth';
+  private readonly BASE_URL = Endpoint.AUTH_ENDPOINT;
   private router: Router = inject(Router);
 
   constructor() {}
@@ -80,8 +81,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    // return sessionStorage.getItem('token') != null ? true : false;
-    return true;
+    return sessionStorage.getItem('token') != null ? true : false;
   }
 
   isAuthorized() {}

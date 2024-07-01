@@ -1,6 +1,13 @@
 <div class="container p-4">
   <h3 class="display-5 fs-4">USERS DATA</h3>
 
+  @if (loading) {
+  <div class="text-center">
+    <div class="spinner-grow" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  } @else {
   <div class="table-responsive">
     <table class="table table-responsive table-hover">
       <thead>
@@ -50,4 +57,5 @@
       </ul>
     </nav>
   </div>
+  }
 </div>

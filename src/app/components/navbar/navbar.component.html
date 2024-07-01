@@ -2,7 +2,7 @@
   class="navbar navbar-expand-lg navbar-light position-sticky bg-white top-0 p-2"
 >
   <div class="container-fluid">
-    <a class="navbar-brand display-5 fs-4" routerLink="">PRESTA SAVINGS</a>
+    <a class="navbar-brand display-5 fs-4" routerLink="/home">PRESTA SAVINGS</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,7 +15,11 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isNavbarCollapsed">
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      [ngbCollapse]="isNavbarCollapsed"
+    >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
       <ul class="navbar-nav me-5 mb-2 mb-lg-0">
         <li ngbDropdown class="nav-item dropdown">
@@ -27,7 +31,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Username
+            {{ username }}
           </a>
           <ul
             ngbDropdownMenu
@@ -48,7 +52,7 @@
                 class="dropdown-item"
                 routerLink="/home/customers"
                 *ngIf="role === 'CSR'"
-                >Manage Customers</a
+                >Customers</a
               >
             </li>
             <li>
@@ -56,7 +60,7 @@
                 class="dropdown-item"
                 routerLink="/home/accounts"
                 *ngIf="role === 'CSR'"
-                >Manage Accounts</a
+                >Accounts</a
               >
             </li>
             <li>
@@ -64,7 +68,7 @@
                 class="dropdown-item"
                 routerLink="/home/transactions"
                 *ngIf="role === 'CSR'"
-                >Manage Transactions</a
+                >Transactions</a
               >
             </li>
             <li>

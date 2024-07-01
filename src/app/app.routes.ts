@@ -9,7 +9,6 @@ import { UserComponent } from './pages/user/user.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CustomerDetailsComponent } from './pages/customer-details/customer-details.component';
-import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { MyAccountsComponent } from './pages/my-accounts/my-accounts.component';
 import { authGuard } from './services/auth.guard';
 
@@ -65,10 +64,6 @@ export const routes: Routes = [
       {
         path: 'customers/:id',
         component: CustomerDetailsComponent,
-      },
-      {
-        path: 'create-account',
-        component: CreateAccountComponent,
       },
       {
         path: 'owner-accounts',

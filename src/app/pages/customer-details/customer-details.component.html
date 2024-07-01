@@ -1,14 +1,16 @@
 <div class="container p-4">
   <div class="d-flex gap-3 align-items-center mb-4">
-    <a class="btn btn-sm btn-secondary" routerLink="/home/customers"><< BACK</a>
+    <a class="btn btn-sm btn-secondary" routerLink="/home/customers"
+      >&larr; BACK</a
+    >
   </div>
 
   <h3 class="display-5 fs-4">CUSTOMER DETAILS</h3>
   <div class="table-responsive">
-    <table class="table table-responsive table-hover table-bordered">
+    <table class="table table-responsive table-hover">
       <tbody>
         <tr>
-          <th>#</th>
+          <th>MEMBER NUMBER</th>
           <td>{{ customer?.memberNumber }}</td>
         </tr>
         <tr>
