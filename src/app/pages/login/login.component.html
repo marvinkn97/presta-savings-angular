@@ -1,38 +1,41 @@
-<div class="container p-4">
-  <div class="card mt-4 mx-auto" style="width: 350px">
-    <div class="card-body bg-white">
-      <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <div class="row mb-3">
-          <div class="col-md-12">
-            <label for="userId">Username</label>
-            <input
-              type="text"
-              class="form-control bg-light"
-              id="userId"
-              formControlName="username"
-            />
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-lg border-0 rounded-lg mt-5">
+        <div class="card-body">
+          <h3 class="text-center font-weight-light my-4">Login</h3>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group">
+              <label for="userId">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="userId"
+                formControlName="username"
+                placeholder="Enter your username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="passId">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="passId"
+                formControlName="password"
+                placeholder="Enter your password"
+              />
+            </div>
+            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+              <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer text-center">
+          <div class="small">
+            Don't have an account?
+            <a class="btn btn-link" routerLink="/register">Register here!</a>
           </div>
         </div>
-        <div class="row mb-3">
-          <div class="col-md-12">
-            <label for="passId">Password</label>
-            <input
-              type="password"
-              class="form-control bg-light"
-              id="passId"
-              formControlName="password"
-            />
-          </div>
-        </div>
-        <div class="row w-50 mx-auto mt-3">
-          <button class="btn btn-sm btn-dark" type="submit">LOGIN</button>
-        </div>
-      </form>
-      <div class="mt-4">
-        <p>
-          Dont have an account?
-          <a class="btn btn-sm btn-light" routerLink="/register">Register</a>
-        </p>
       </div>
     </div>
   </div>
