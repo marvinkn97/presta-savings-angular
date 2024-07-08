@@ -1,35 +1,30 @@
-<div class="container py-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4">
-      <div class="card shadow-lg border-0 rounded-lg mt-5" style="width: 350px;">
-        <div class="card-body bg-white">
-          <h3 class="text-center font-weight-light my-4">Activate Account</h3>
-          <form [formGroup]="activationForm" (ngSubmit)="activateAccount()">
-            <div class="form-group">
-              <label for="codeId">Activation Code</label>
-              <input
-                type="text"
-                class="form-control bg-light"
-                id="codeId"
-                formControlName="code"
-                placeholder="Enter your activation code"
-              />
-            </div>
-            <div class="form-group d-flex align-items-center justify-content-center mt-4 mb-0">
-              <button class="btn btn-dark" type="submit" style="width: 100%; padding: 10px 0;">VERIFY</button>
-            </div>
-          </form>
-          <div class="form-group d-flex align-items-center justify-content-center mt-3">
-            <button
-              class="btn btn-light"
-              type="button"
-              (click)="resendToken()"
-              style="width: 100%; padding: 10px 0;"
-            >
-              RESEND
-            </button>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card mt-4 mx-auto" style="width: 350px">
+    <div class="card-body bg-white">
+      <form [formGroup]="activationForm" (ngSubmit)="activateAccount()">
+        <div class="row mb-3">
+          <div class="col-md-12">
+            <label for="codeId">Activation Code</label>
+            <input
+              type="text"
+              class="form-control bg-light"
+              id="codeId"
+              formControlName="code"
+            />
           </div>
         </div>
+        <div class="row mx-auto mt-3">
+          <button class="btn btn-sm btn-dark w-100" type="submit">VERIFY</button>
+        </div>
+      </form>
+      <div class="row mx-auto mt-3">
+        <button
+          class="btn btn-sm btn-light w-100"
+          type="button"
+          (click)="resendToken()"
+        >
+          RESEND
+        </button>
       </div>
     </div>
   </div>
