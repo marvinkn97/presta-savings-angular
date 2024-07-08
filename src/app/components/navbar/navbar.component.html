@@ -1,6 +1,4 @@
-<nav
-  class="navbar navbar-expand-lg navbar-light position-sticky bg-white top-0 p-2"
->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm position-sticky top-0 p-2">
   <div class="container-fluid">
     <a class="navbar-brand display-5 fs-4" routerLink="/home">PRESTA SAVINGS</a>
     <button
@@ -15,13 +13,9 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div
-      class="collapse navbar-collapse"
-      id="navbarSupportedContent"
-      [ngbCollapse]="isNavbarCollapsed"
-    >
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isNavbarCollapsed">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-      <ul class="navbar-nav me-5 mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li ngbDropdown class="nav-item dropdown">
           <a
             ngbDropdownToggle
@@ -35,7 +29,7 @@
           </a>
           <ul
             ngbDropdownMenu
-            class="dropdown-menu"
+            class="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdown"
           >
             <li><a class="dropdown-item" routerLink="/home">Dashboard</a></li>
@@ -44,40 +38,35 @@
                 class="dropdown-item"
                 routerLink="/home/users"
                 *ngIf="role === 'ADMIN'"
-                >Manage Users</a
-              >
+              >Manage Users</a>
             </li>
             <li>
               <a
                 class="dropdown-item"
                 routerLink="/home/customers"
                 *ngIf="role === 'CSR'"
-                >Customers</a
-              >
+              >Customers</a>
             </li>
             <li>
               <a
                 class="dropdown-item"
                 routerLink="/home/accounts"
                 *ngIf="role === 'CSR'"
-                >Accounts</a
-              >
+              >Accounts</a>
             </li>
             <li>
               <a
                 class="dropdown-item"
                 routerLink="/home/transactions"
                 *ngIf="role === 'CSR'"
-                >Transactions</a
-              >
+              >Transactions</a>
             </li>
             <li>
               <a
                 class="dropdown-item"
                 routerLink="/home/owner-accounts"
                 *ngIf="role === 'CUSTOMER'"
-                >My Accounts</a
-              >
+              >My Accounts</a>
             </li>
             <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#">Profile</a></li>
