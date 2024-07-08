@@ -3,7 +3,7 @@
     <a class="btn btn-sm btn-secondary" routerLink="/home/users">&larr; BACK</a>
   </div>
 
-  <h3 class="display-5 fs-4">USER DETAILS</h3>
+  <h3 class="display-5 fs-4 mb-4">USER DETAILS</h3>
 
   @if (loading) {
   <div class="text-center">
@@ -11,9 +11,9 @@
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
-  }@else {
+  } @else {
   <div class="table-responsive">
-    <table class="table table-responsive table-hover">
+    <table class="table table-hover">
       <tbody>
         <tr>
           <th>USER ID</th>
