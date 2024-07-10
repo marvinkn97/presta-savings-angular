@@ -1,9 +1,8 @@
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-md-6 col-lg-4">
-      <div class="card shadow-lg border-0 rounded-lg mt-5">
+      <div class="card shadow-lg border-0 rounded-lg">
         <div class="card-body">
-          <h3 class="text-center font-weight-light my-4">PRESTA SAVINGS</h3>
           <form [formGroup]="loginForm" (ngSubmit)="login()">
             <div class="form-group">
               <label for="userId">Username</label>
@@ -25,8 +24,16 @@
                 placeholder="Enter your password"
               />
             </div>
-            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-              <button class="btn btn-dark" style="width: 100%; padding: 10px 0;" type="submit">Login</button>
+            <div
+              class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"
+            >
+              <button
+                class="btn btn-dark"
+                style="width: 100%; padding: 10px 0"
+                type="submit"
+              >
+                Login
+              </button>
             </div>
           </form>
         </div>

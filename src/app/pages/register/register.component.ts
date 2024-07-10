@@ -43,8 +43,8 @@ export class RegisterComponent {
       kraPin: this.registrationForm.value.kraPin as string,
     };
 
-    if(!this.registrationForm.valid){
-      alert("Form not valid");
+    if (!this.registrationForm.valid) {
+      alert('Form not valid');
       return;
     }
 

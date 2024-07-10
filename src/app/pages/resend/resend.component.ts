@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './resend.component.html',
-  styleUrl: './resend.component.css'
+  styleUrl: './resend.component.css',
 })
-export class ResendComponent {
-
-}
+export class ResendComponent {}
